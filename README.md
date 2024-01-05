@@ -1,27 +1,48 @@
-# ScssArchInNg
+# Angular 7-1 SCSS/Sass Architecture
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.11.
+This Angular project follows the 7-1 SCSS/Sass architecture for organizing and managing styles. Below are guidelines and instructions to help you understand and work with the code.
 
-## Development server
+## Angular.json Configuration
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+In your `angular.json` file, make the following changes under the `architect > build > options` section:
 
-## Code scaffolding
+```json
+"styles": ["src/styles/global/styles.scss"], // Add this line
+"stylePreprocessorOptions": {
+  "includePaths": ["src/styles"]
+}
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Reset Library
 
-## Build
+This project uses pure-start as the reset library. To install it, run the following command:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install pure-start
+```
 
-## Running unit tests
+After installation, include the reset file in your angular.json file by adding it to the styles array:
+```json
+"styles": [
+  "pure-start/pure-start.css", // Add this line
+  "src/styles/global/styles.scss", // Add this line
+  "path/to/other/styles.css"
+],
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Adding Vendors
+To include vendor styles or scripts, modify the angular.json file and add them to the scripts and styles arrays.
+```bash
+"styles": [
+  "src/styles.scss",
+  "path/to/vendor/style.css"
+],
+"scripts": [
+  "path/to/vendor/script.js"
+],
+```
+## Layout
+Add layout-related styles in the core modules of your Angular application.
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Page Stylings
+Add page-specific stylings in the respective component's styling file.
