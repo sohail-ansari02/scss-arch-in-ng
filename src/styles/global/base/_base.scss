@@ -1,0 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// i.e all links should have red underline
+// -----------------------------------------------------------------------------
+:root,
+.light {
+  @include theme($colors-light);
+}
+
+.dark {
+  @include theme($colors-dark);
+}
