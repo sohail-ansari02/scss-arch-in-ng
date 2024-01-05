@@ -53,6 +53,7 @@
               "src/assets"
             ],
             "styles": [
+              "pure-start/pure-start.css",
               "src/styles/global/styles.scss"
             ],
             "stylePreprocessorOptions": {
@@ -124,9 +125,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "pure-start/pure-start.css",
+              "src/styles/global/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/styles"]
+            }
           }
         }
       }
