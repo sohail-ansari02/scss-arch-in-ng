@@ -98,10 +98,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "scss-arch-in-ng:build:production"
+              "buildTarget": "scss-arch-in-ng:build:production"
             },
             "development": {
-              "browserTarget": "scss-arch-in-ng:build:development"
+              "buildTarget": "scss-arch-in-ng:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,7 +109,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "scss-arch-in-ng:build"
+            "buildTarget": "scss-arch-in-ng:build"
           }
         },
         "test": {
