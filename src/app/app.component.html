@@ -11,11 +11,17 @@
     height: 100vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    background: url("https://media.istockphoto.com/id/1366067211/photo/white-clouds.jpg?s=1024x1024&w=is&k=20&c=NzHhLEbc_5rTRnM2JewWC1zzStforUeryriPNjgtltY=")
+        no-repeat 0/cover,
+      url("https://angular.dev/assets/content/images/press-kit/angular_icon_gradient.gif")
+        repeat 0/100px;
+    /* background-position: ; */
+    background-blend-mode: color-burn;
   }
 
   .content {
     display: flex;
-    margin: 82px auto 32px;
+    margin: 42px auto 32px;
     padding: 0 16px;
     max-width: 960px;
     flex-direction: column;
@@ -61,10 +67,16 @@
   pre {
     line-height: 1.1;
   }
+
+  #clouds {
+    position: fixed;
+    z-index: -2;
+    top: 40%;
+  }
 </style>
 <div class="wrapper">
   <div class="content" role="main">
-    <h2>SCSS architecture boilerplate for Angular</h2>
+    <h1>SCSS architecture boilerplate for Angular</h1>
     <div class="terminal">
       <app-test></app-test>
       <pre>
@@ -78,6 +90,16 @@
           architect>build>options>
           "stylePreprocessorOptions":
             "includePaths": ["src/styles"]
+
+        </code>
+        and
+        <code>
+          architect>build>options>
+          "styles":[
+          "pure-start/pure-start.css", // Add this line
+          "src/styles/global/styles.scss", // Add this line
+          "path/to/other/styles.css"
+        ],
 
         </code>
 
