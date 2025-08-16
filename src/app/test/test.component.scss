@@ -1,5 +1,5 @@
-@import "abstracts";
+@use "abstracts/variables" as vars;
 
 .card{
-  color: var($--alert);
+  font-family: vars.$roboto-font-stack;
 }

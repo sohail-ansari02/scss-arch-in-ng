@@ -131,7 +131,7 @@
               "src/styles/global/styles.scss"
             ],
             "stylePreprocessorOptions": {
-              "includePaths": ["src/styles"]
+              "includePaths": ["src/styles/abstracts"]
             }
           }
         }
